@@ -20,4 +20,27 @@ public class MapStore {
         String [] valueArr = studentMap1.get(studentKey).split("-");
         return valueArr[0]+" " + valueArr[1];
     }
+
+    public static Map<Integer, String> changeDepartment(Map<Integer, String> studentMap, int number,String department) {
+        //istenen key varsa update edip geri döndür yoksa gelen map i döndür..
+        if(studentMap.containsKey(number)){
+            String valueOfKey = studentMap.get(number);
+            String[] valueOfKeyArr = valueOfKey.split("-");
+            valueOfKeyArr[3] = department;
+            String newValueOfKeyArr ="";
+            for (int i = 0; i < valueOfKeyArr.length; i++) {
+                if (i == (valueOfKeyArr.length-1)) {
+                    newValueOfKeyArr += valueOfKeyArr[i];
+
+                }else
+                    newValueOfKeyArr += valueOfKeyArr[i]+"-";
+
+
+            }
+            studentMap.put(number,newValueOfKeyArr);
+
+
+        }
+        return studentMap;
+    }
 }
