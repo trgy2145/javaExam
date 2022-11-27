@@ -1,6 +1,5 @@
-package exam44_Maps;
+package exam44_45_Maps;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class C01_Maps {
