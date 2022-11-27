@@ -1,5 +1,6 @@
 package exam44_Maps;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,5 +43,15 @@ public class MapStore {
 
         }
         return studentMap;
+    }
+
+    public static void takeNameAndSurnameAndClass(Map<Integer, String> studentMap, String letter) {
+        Collection<String> valuesCollection =  studentMap.values();
+        for (String each: valuesCollection) {
+            String [] valuesArr = each.split("-");
+            if (valuesArr[3].equals(letter)) {
+                System.out.println(valuesArr[0] + " " + valuesArr[1]+" "+valuesArr[2]);
+            }
+        }
     }
 }
