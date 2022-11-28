@@ -1,8 +1,6 @@
 package exam44_45_Maps;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class MapStore {
     // create a Map method
@@ -53,5 +51,28 @@ public class MapStore {
                 System.out.println(valuesArr[0] + " " + valuesArr[1]+" "+valuesArr[2]);
             }
         }
+    }
+
+    public static Set<String> orderedTreeSetList(Map<Integer, String> studentMap) {
+        Set<String> orderedStudentList = new TreeSet<>();
+
+        // we need to get keys and values at the same time , for this reason we can use entrySet
+       Set<Map.Entry<Integer,String>> orderedStudentListEntry= studentMap.entrySet();
+       String informationOfStudents ;
+       String values;
+       String[] valuesArr;
+        for (Map.Entry<Integer,String> eachEntry: orderedStudentListEntry
+             ) {
+            values = eachEntry.getValue();
+            valuesArr = values.split("-");
+            informationOfStudents = valuesArr[4]+", "+valuesArr[2]+", "+
+                    valuesArr[3]+", "+valuesArr[0]+" "+valuesArr[1]+" "+eachEntry.getKey();
+            orderedStudentList.add(informationOfStudents);
+
+            // There was any change in the map.that'why  We will not make any additions to the map.
+
+        }
+
+        return orderedStudentList;
     }
 }

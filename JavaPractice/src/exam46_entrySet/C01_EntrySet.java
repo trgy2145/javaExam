@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class C01_EntrySet {
     public static void main(String[] args) {
-        //all the departments,classes, names ,surnames,numbers on the studentMap will be written
+
         Map<Integer,String> studentMap = MapStore.createMap();
         System.out.println(studentMap);
         /*
